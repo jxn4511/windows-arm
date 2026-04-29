@@ -61,7 +61,7 @@ docker run -it --rm --name windows -e "VERSION=11" -p 8006:8006 --device=/dev/kv
 ```bash
 docker run -it --rm --name windows -e "VERSION=11" -e "KVM=N" -p 8006:8006 -v "${PWD:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows
 ```
-#10times slower, you cannot stand with...
+#disable KVM inorder to commence on MacOS.  BUT 10times slower, you cannot stand with...
 
 ##### Via Kubernetes:
 
