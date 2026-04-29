@@ -50,11 +50,18 @@ services:
     stop_grace_period: 2m
 ```
 
-##### Via Docker CLI:
+##### Via Docker CLI_v1_original:
 
 ```bash
 docker run -it --rm --name windows -e "VERSION=11" -p 8006:8006 --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN -v "${PWD:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows
 ```
+
+##### Via Docker CLI_v2:
+
+```bash
+docker run -it --rm --name windows -e "VERSION=11" -e "KVM=N" -p 8006:8006 -v "${PWD:-.}/windows:/storage" --stop-timeout 120 docker.io/dockurr/windows
+```
+#10times slower, you cannot stand with...
 
 ##### Via Kubernetes:
 
